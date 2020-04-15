@@ -22,7 +22,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
 
     private EditText title,description,author;
-    private Button save,read;
+    private Button save_all,read_all,delete_all;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
         title = findViewById(R.id.title);
         description = findViewById(R.id.description);
         author = findViewById(R.id.author);
-        save = findViewById(R.id.save);
-        read = findViewById(R.id.read);
+        save_all = findViewById(R.id.save_all);
+        read_all = findViewById(R.id.read_all);
+        delete_all = findViewById(R.id.delete_all);
 
-        read.setOnClickListener(new View.OnClickListener() {
+        read_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,PostListActivity.class);
@@ -43,7 +44,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
+        delete_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase.getInstance().getReference().child("Post").setValue(null);
+            }
+        });
+
+        save_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
