@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:6.2.1'
     implementation 'com.google.firebase:firebase-database:19.2.1'
     implementation 'com.google.android.material:material:1.2.0-alpha05'
+    implementation 'com.orhanobut:dialogplus:1.11@aar'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
